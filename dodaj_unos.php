@@ -23,7 +23,7 @@ if ($res->num_rows > 0) {
 }
 
 // Dodaje novi zapis u bazu
-$sql = "INSERT INTO radni_sati (korisnik_id, datum, pocetak, status, opis) VALUES (?, CURDATE(), NOW(), 'aktivno', '')";
+$sql = "INSERT INTO radni_sati (korisnik_id, datum, pocetak, status) VALUES (?, CURDATE(), NOW(), 'aktivno')";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $korisnik_id);
 $stmt->execute();
